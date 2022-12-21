@@ -29,6 +29,13 @@ app.get("/api/persons", (req, res) => {
   res.json(persons);
 });
 
+app.get("/info", (req, res) => {
+  const currentDate = new Date();
+  res.send(
+    `<h2>Phonebook has info for ${persons.length} people </h2> <h2>${currentDate}`
+  );
+});
+
 app.listen(PORT, () => {
   console.log(`Server active on ${PORT}`);
 });
